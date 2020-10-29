@@ -1,0 +1,31 @@
+{
+  "name": "led.io",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "chart.js": "^2.9.4",
+    "core-js": "^3.6.5",
+    "express": "^4.17.1",
+    "johnny-five": "^2.0.0",
+    "pretty-checkbox-vue": "^1.1.9",
+    "socket.io": "^2.3.0",
+    "socket.io-client": "^2.3.1",
+    "vue": "^2.6.11",
+    "vue-chartjs": "^3.5.1",
+    "vue-socket.io": "^3.0.10"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
