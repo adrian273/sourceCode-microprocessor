@@ -1,7 +1,7 @@
 /***
  * Adrian Verdugo ( アドリアン　)
  * @github adrian273
- * @since 10/2
+ * @since 10/29/2020
  * 
  */
 const express = require("express");
@@ -20,7 +20,6 @@ const io = require("socket.io")(server);
 board.on("ready", function () {
     console.log('ready')
 })
-//socket.broadcast.emit("newdata", getRandomValue())
 
 io.on("connection", socket => {
     socket.broadcast.on("ledOn", (data) => {

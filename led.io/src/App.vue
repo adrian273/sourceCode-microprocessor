@@ -1,19 +1,18 @@
 <template>
   <div id="app">
     <div class="main">
-     <h1>
-        Arduino - VUEJS - SOCKET.io
-     </h1>
+      <h1>Arduino - VUEJS - SOCKET.io</h1>
       <template v-for="(v, k) in form">
         <label for="" :key="k">
           <p-check
-            class="p-default p-thick p-pulse"
+            class="p-icon p-fill p-tada"
             v-model="form[k].on"
             :true-value="1"
             :false-value="0"
             @change="ledON"
-            color="primary-o"
+            color="warning"
             >{{ form[k].title }}
+            <i slot="extra" class="icon mdi mdi-flash"></i>
           </p-check>
           <img src="./assets/on.png" alt="" v-if="form[k].on == 1" />
           <img src="./assets/off.png" alt="" v-if="form[k].on == 0" />
@@ -45,7 +44,6 @@ export default {
       },
     };
   },
-  created() {},
   methods: {
     ledON(event) {
       socket.emit("ledOn", this.form);
