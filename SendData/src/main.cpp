@@ -1,28 +1,22 @@
 // @since 10/28/2020
 // @github adrian273 ( アドリアン )
+// 10/29/2020
+
 
 #include <Arduino.h>
 
-const int A = 4, B = 7, C = 12, D = 13;
+
+int pos;
 
 void setup()
 {
-  pinMode(A, OUTPUT);
-  pinMode(B, OUTPUT);
-  pinMode(C, OUTPUT);
-  pinMode(D, OUTPUT);
-  digitalWrite(A, HIGH);
-  digitalWrite(B, HIGH);
-  digitalWrite(C, HIGH);
-  digitalWrite(D, HIGH);
   Serial.begin(9600);
 }
 
 void loop()
 {
-  String ONMESSAGE = "ON";
-  String OFFMESSAGE = "OFF";
- 
-  
-  Serial.println("4");
+  int i = analogRead(A1);
+  int pos = map(i, 0, 1023, 0, 100);
+  Serial.println(pos);
+  delay(1000);
 }
