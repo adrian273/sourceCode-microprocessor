@@ -14,7 +14,7 @@ namespace SendDataGUI
 {
     public partial class Form1 : Form
     {
-        String[] n;
+        
         public Form1()
         {
             InitializeComponent();
@@ -24,7 +24,7 @@ namespace SendDataGUI
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            progressBar1.Value = 0;
         }
 
         private void serialPort1_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
@@ -34,23 +34,32 @@ namespace SendDataGUI
             this.BeginInvoke(new LineReceivedEvent(LineReceived), POT);
         }
 
-        string[] words;
-
-        private delegate void LineReceivedEvent(string inData);
+           private delegate void LineReceivedEvent(string inData);
 
         public void LineReceived(string inData)
         {
             label1.Text = inData;
-            if (label1.Text == "3")
-            {
-                pictureBox3.Image = Resources.on;
-            }
-            if (label1.Text == "4")
-            {
-                pictureBox4.Image = Resources.on;
-            }
 
-            Nn(inData);
+            //int n = int.Parse(inData.ToString());
+            int n;
+            
+            if (Int32.TryParse(inData.ToString(), out n))
+            {
+                progressBar1.Value = n;
+                label2.Text = "Sin Energia";
+                if (n == 0)
+                {
+                    pictureBox1.Image = Resources.bulb_0;
+                    label2.Text = "Sin Energia";
+                } else if (n > 0 && n <= 50)
+                {
+                    label2.Text = "Energia Media";
+                    pictureBox1.Image = Resources.bulb_1;
+                } else if (n > 50 && n <= 100) {
+                    label2.Text = "Energia Alta";
+                    pictureBox1.Image = Resources.bulb_3;
+                }
+            }
             inData = "";
         }
 
@@ -61,31 +70,20 @@ namespace SendDataGUI
 
         public void Nn(string d)
         {
-            System.Console.WriteLine("es un numero" + d);
-            label2.Text = d;
-            if (label2.Text == "1")
-            {
-                img1.Image = Resources.on;
-            }
             
-            if (label2.Text == "2")
-            {
-                img2.Image = Resources.on;
-            }
-
-            if (label2.Text == "3")
-            {
-                pictureBox3.Image = Resources.on;
-            }
-
-            if (label2.Text == "4")
-            {
-                pictureBox4.Image = Resources.on;
-            }
-            d = "";
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
         {
 
         }
