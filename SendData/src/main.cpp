@@ -6,8 +6,6 @@
 #include <Arduino.h>
 
 
-int pos;
-
 void setup()
 {
   Serial.begin(9600);

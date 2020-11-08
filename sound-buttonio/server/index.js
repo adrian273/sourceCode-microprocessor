@@ -25,7 +25,6 @@ board.on("ready", function () {
 setTimeout(() => {
 
     io.on("connection", socket => {
-        console.log('yasli')
         // Create a new `button` hardware instance.
         // This example allows the button module to
         // create a completely default instance

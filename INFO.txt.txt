@@ -1,0 +1,15 @@
+Los diagramas se encuentran en la carpeta "diagrams";
+- Enumerados como salen en el archivo, en este caso esta el ejercicio 2 y 4, los cuales se isieron en la clase.
+
+# URL de youtube 
+Videos ejercicio 2
+- https://youtu.be/mhPeKTdxyQM  (part 1)
+- https://youtu.be/6nHdqBMGbVA  (part 2)
+
+- Video ejercicio 4
+- https://youtu.be/5PhWl_IbjtY (part 1) 
+- https://youtu.be/YjoKe_yteZ4 (part 2)
+ 
+# Source Code
+- Proyect 2 source code (led.io)
+- Proyect 4 source code (sendData + sendDataGUI)
